@@ -564,33 +564,6 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}{Results}{Noise2Noise for PET reconstruction/denoising}
-    \begin{figure}
-        \centering
-        \begin{subfigure}[b]{0.32\textwidth}
-            \centering
-            \includegraphics[width=\linewidth]{results/recon_mlem.png}
-            \caption{MLEM / noisy sinogram}
-            \label{fig:res1}
-        \end{subfigure}\hfill
-        \begin{subfigure}[b]{0.32\textwidth}
-            \centering
-            \includegraphics[width=\linewidth]{results/recon_nfpt.png}
-            \caption{MLEM / clean sinogram}
-            \label{fig:res2}
-        \end{subfigure}\hfill
-        \begin{subfigure}[b]{0.32\textwidth}
-            \centering
-            \includegraphics[width=\linewidth]{results/recon_denoised.png}
-            \caption{MLEM / denoised by Noise2Noise}
-            \label{fig:res3}
-        \end{subfigure}
-        \caption{Noise2Noise results with data consistency ($\mathcal{L}\CI$) and Gradient Step Denoiser \cite{hureault2021}}
-        \label{fig:noise2noise-results_data_consistency}
-    \end{figure}
-{\color{lightgray}\scriptsize Image source : author}
-\end{frame}
-
 \section{Conclusion and Perspectives}
 
 \begin{frame}
@@ -612,6 +585,34 @@
             \item Train with real PET data from C.H.U de Nantes.
         \end{itemize}
     \end{itemize}
+\end{frame}
+
+\begin{frame}{Towards PnP/RED...}{Conclusion and Perspectives}
+    Gradient Step Denoiser : $D_\theta = I - \nabla \left\| I - N_\theta \right\|^2$ \cite{hureault2021}
+    \begin{figure}
+        \centering
+        \begin{subfigure}[b]{0.32\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{results/recon_mlem.png}
+            \caption{MLEM / noisy sinogram}
+            \label{fig:res1}
+        \end{subfigure}\hfill
+        \begin{subfigure}[b]{0.32\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{results/recon_nfpt.png}
+            \caption{MLEM / clean sinogram}
+            \label{fig:res2}
+        \end{subfigure}\hfill
+        \begin{subfigure}[b]{0.32\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{results/recon_denoised.png}
+            \caption{MLEM / denoised by Noise2Noise}
+            \label{fig:res3}
+        \end{subfigure}
+        \caption{Noise2Noise results with data consistency ($\mathcal{L}\CI$)}
+        \label{fig:noise2noise-results_data_consistency}
+    \end{figure}
+{\color{lightgray}\scriptsize Image source : author}
 \end{frame}
 
 \begin{frame}{References}
