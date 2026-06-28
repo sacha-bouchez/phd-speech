@@ -15,7 +15,7 @@
             "command": "docker",
             "args": [
                 "run", "--rm", "-v",
-                "/home/sacha.bouchez-delotte/phd-speech-short:/workspace",
+                "/home/sacha.bouchez-delotte/phd-speech:/workspace",
                 "-w", "/workspace",
                 "texlive/texlive",
                 "pdflatex",
@@ -29,7 +29,7 @@
             "command": "docker",
             "args": [
                 "run", "--rm", "-v",
-                "/home/sacha.bouchez-delotte/phd-speech-short:/workspace",
+                "/home/sacha.bouchez-delotte/phd-speech:/workspace",
                 "-w", "/workspace",
                 "texlive/texlive",
                 "latexmk",
@@ -45,7 +45,7 @@
             "command": "docker",
             "args": [
                 "run", "--rm", "-v",
-                "/home/sacha.bouchez-delotte/phd-speech-short:/workspace",
+                "/home/sacha.bouchez-delotte/phd-speech:/workspace",
                 "-w", "/workspace",
                 "texlive/texlive",
                 "bibtex",
@@ -57,7 +57,7 @@
             "command": "docker",
             "args": [
                 "run", "--rm", "-v",
-                "/home/sacha.bouchez-delotte/phd-speech-short:/workspace",
+                "/home/sacha.bouchez-delotte/phd-speech:/workspace",
                 "-w", "/workspace",
                 "texlive/texlive",
                 "biber",
@@ -69,7 +69,7 @@
             "command": "docker",
             "args": [
                 "run", "--rm", "-v",
-                "/home/sacha.bouchez-delotte/phd-speech-short:/workspace",
+                "/home/sacha.bouchez-delotte/phd-speech:/workspace",
                 "-w", "/workspace",
                 "texlive/texlive",
                 "sh", "-c",
