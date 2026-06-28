@@ -1,0 +1,82 @@
+{
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "Docker latexmk",
+            "tools": ["docker-laexmk"]
+        },
+        {
+            "name": "Docker PdfLaTeX Full",
+            "tools": ["docker-pdflatex-full"]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "docker-pdflatex",
+            "command": "docker",
+            "args": [
+                "run", "--rm", "-v",
+                "/home/sacha.bouchez-delotte/phd-speech-short:/workspace",
+                "-w", "/workspace",
+                "texlive/texlive",
+                "pdflatex",
+                "-interaction=nonstopmode",
+                "-synctex=1",
+                "noise2noise.tex"
+            ]
+        },
+        {
+            "name": "docker-laexmk",
+            "command": "docker",
+            "args": [
+                "run", "--rm", "-v",
+                "/home/sacha.bouchez-delotte/phd-speech-short:/workspace",
+                "-w", "/workspace",
+                "texlive/texlive",
+                "latexmk",
+                "-interaction=nonstopmode",
+                "-synctex=1",
+                "-pdf",
+                "-bibtex",
+                "noise2noise.tex"
+            ]
+        },
+        {
+            "name": "docker-bibtex",
+            "command": "docker",
+            "args": [
+                "run", "--rm", "-v",
+                "/home/sacha.bouchez-delotte/phd-speech-short:/workspace",
+                "-w", "/workspace",
+                "texlive/texlive",
+                "bibtex",
+                "main"
+            ]
+        },
+        {
+            "name": "docker-biber",
+            "command": "docker",
+            "args": [
+                "run", "--rm", "-v",
+                "/home/sacha.bouchez-delotte/phd-speech-short:/workspace",
+                "-w", "/workspace",
+                "texlive/texlive",
+                "biber",
+                "main"
+            ]
+        },
+        {
+            "name": "docker-pdflatex-full",
+            "command": "docker",
+            "args": [
+                "run", "--rm", "-v",
+                "/home/sacha.bouchez-delotte/phd-speech-short:/workspace",
+                "-w", "/workspace",
+                "texlive/texlive",
+                "sh", "-c",
+                "pdflatex -interaction=nonstopmode -synctex=1 noise2noise.tex && biber main && pdflatex -interaction=nonstopmode -synctex=1 noise2noise.tex && pdflatex -interaction=nonstopmode -synctex=1 noise2noise.tex"
+            ]
+        }
+    ],
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.autoBuild.run": "onFileChange"
+}
